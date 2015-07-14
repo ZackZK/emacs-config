@@ -23,4 +23,4 @@
  (add-hook 'markdown-mode-hook
             (lambda () (local-set-key (kbd "C-x i") 'markdown-insert-highlight)))
 
-
+(provide 'markdown-config)

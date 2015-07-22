@@ -17,7 +17,7 @@
   ;; 再插入 hightlight
   (goto-char (region-beginning))
   (beginning-of-line)
-  (insert "{% hightlight " code "%}\n" )
+  (insert "{% highlight " code "%}\n" )
   )
 
  (add-hook 'markdown-mode-hook

@@ -1,8 +1,82 @@
-;; Windows Ctrl-spaceè¢«è¾“å…¥æ³•åˆ‡æ¢å ç”¨ï¼Œä½¿ç”¨Ctrl-lå¿«æ·é”®
+;; -*- Emacs-Lisp -*-
+
+(put 'eval-expression 'disabled nil) ; Enable command "ESC :".
+(setq require-final-newline t) ; Makes sure the last line is terminated.
+(setq auto-save-interval 1000) ; Do not auto-save too often.
+
+;;
+;; Set mouse-select color
+;;
+(set-face-background 'region' "SlateGray")
+(set-face-foreground 'region' "white")
+(set-face-background 'highlight' "DarkSlateBlue")
+(set-face-foreground 'highlight' "white")
+;;
+;; End of Mouse colour selections
+;;
+
+
+;; Printer configurations, uncomment and change these to the proper
+;; values of your site
+;;
+; (setq ntemacs-print-server-name "ServerNameNotSet")
+; (setq ntemacs-printer-name "PrinterNameNotSet")
+;;
+;;
+;;; End of orig.emacs
+
+;; ¼ÓÔØÂ·¾¶
+(setq load-path (cons "./my-lisp" load-path))
+(setq load-path (cons "./my-lisp/3rd-lisp" load-path))
+(setq load-path (cons "./my-lisp/3rd-lisp/language-mode" load-path))
+
+
+;;(load "tnsdl")
+;;(add-to-list 'auto-mode-alist '("\\.sdl\\.spd'" . tnsdl-mode))
+
+(require 'my-font-size)
+(require 'my-like-ultraedit-conf)
+(require 'my-misc-conf)
+(require 'my-tabbar-conf)
+(require 'my-c-conf)
+(require 'my-python-conf)
+(require 'my-keybind)
+
+;; Org-mode settings
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-font-lock-mode 1)
+(setq org-hide-leading-stars t)
+(setq org-cycle-include-plain-lists t)
+
+
+(ido-mode t)
+(require 'linum)
+(column-number-mode t)
+
+(add-to-list 'custom-theme-load-path "./my-lisp/3rd-lisp/theme")
+(load-theme 'zenburn t)
+
+;;(require 'markdown-mode)
 (global-set-key (kbd "C-l") 'set-mark-command)
-
-;;å¿«é€Ÿè·³è½¬åˆ°æŒ‡å®šè¡Œ
 (global-set-key (kbd "C-x g") 'goto-line)
-
-;;æ›¿æ¢å­—ç¬¦ä¸²å¿«æ·é”®
 (global-set-key (kbd "C-o") 'replace-string)
+
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(setq file-name-coding-system 'chinese-gbk);;ÉèÖÃÎÄ¼şÃû±àÂë
+(setq path-name-coding-system 'chinese-gbk);;ÉèÖÃÄ¿Â¼Â·¾¶Ãû±àÂë
+
+(require 'markdown-config)
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-hook 'yaml-mode-hook
+      '(lambda ()
+        (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+(server-start)
+
+
+

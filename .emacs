@@ -38,15 +38,9 @@
 (require 'my-c-conf)
 (require 'my-python-conf)
 (require 'my-keybind)
+(require 'my-org-mode)
 
-;; Org-mode settings
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-font-lock-mode 1)
-(setq org-hide-leading-stars t)
-(setq org-cycle-include-plain-lists t)
-
 
 (ido-mode t)
 (require 'linum)

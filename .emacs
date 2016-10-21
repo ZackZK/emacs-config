@@ -26,13 +26,10 @@
 ;;; End of orig.emacs
 
 ;; ¼ÓÔØÂ·¾¶
-(setq load-path (cons "./my-lisp" load-path))
-(setq load-path (cons "./my-lisp/3rd-lisp" load-path))
-(setq load-path (cons "./my-lisp/3rd-lisp/language-mode" load-path))
+(setq load-path (cons "~/my-lisp" load-path))
+(setq load-path (cons "~/my-lisp/3rd-lisp" load-path))
+(setq load-path (cons "~/my-lisp/3rd-lisp/language-mode" load-path))
 
-
-;;(load "tnsdl")
-;;(add-to-list 'auto-mode-alist '("\\.sdl\\.spd'" . tnsdl-mode))
 
 (require 'my-font-size)
 (require 'my-like-ultraedit-conf)
@@ -55,7 +52,7 @@
 (require 'linum)
 (column-number-mode t)
 
-(add-to-list 'custom-theme-load-path "./my-lisp/3rd-lisp/theme")
+(add-to-list 'custom-theme-load-path "~/my-lisp/3rd-lisp/theme")
 (load-theme 'zenburn t)
 
 ;;(require 'markdown-mode)

@@ -85,6 +85,9 @@
 (require 'linum)
 ;(global-linum-mode 1)
 
+;;显示列#
+(column-number-mode t)
+
 ;;击键100次自动保存
 ;(setq auto-save-interval 100)
 
@@ -200,9 +203,6 @@ char)
     (setq cmd-str (concat prog-name " " file-name)) ;拼出一个命令
     (shell-command cmd-str)));执行
 
-;;
-(server-start)
-
 ;;(require 'session)
 ;;(add-hook 'after-init-hook 'session-initialize)
 
@@ -212,5 +212,8 @@ char)
         scroll-conservatively 10000)
 
 (display-time-mode nil)
+
+;; 打开ido模式
+(ido-mode t)
 
 (provide 'my-misc-conf)

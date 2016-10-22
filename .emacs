@@ -15,41 +15,34 @@
 ;; End of Mouse colour selections
 ;;
 
-
-;; Printer configurations, uncomment and change these to the proper
-;; values of your site
-;;
-; (setq ntemacs-print-server-name "ServerNameNotSet")
-; (setq ntemacs-printer-name "PrinterNameNotSet")
-;;
-;;
-;;; End of orig.emacs
-
 ;; 加载路径
 (setq load-path (cons "~/my-lisp" load-path))
 (setq load-path (cons "~/my-lisp/3rd-lisp" load-path))
 (setq load-path (cons "~/my-lisp/3rd-lisp/language-mode" load-path))
 
-
+;; 字体设置
 (require 'my-font-size)
+;; F2, F3类似ultraedit
 (require 'my-like-ultraedit-conf)
+;; 杂项
 (require 'my-misc-conf)
+;; tabber设置
 (require 'my-tabbar-conf)
+;; C/C++语言配置
 (require 'my-c-conf)
+;; python配置
 (require 'my-python-conf)
+;; 按键绑定
 (require 'my-keybind)
+;; org模式配置
 (require 'my-org-mode)
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
-(ido-mode t)
-(require 'linum)
-(column-number-mode t)
-
+;; 加载zenburn主题
 (add-to-list 'custom-theme-load-path "~/my-lisp/3rd-lisp/theme")
 (load-theme 'zenburn t)
 
-;;(require 'markdown-mode)
 (global-set-key (kbd "C-l") 'set-mark-command)
 (global-set-key (kbd "C-x g") 'goto-line)
 (global-set-key (kbd "C-o") 'replace-string)

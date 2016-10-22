@@ -1,4 +1,3 @@
-;;设置字体
 ;(set-default-font "-outline-Consolas-normal-i-normal-normal-*-*-96-96-c-*-iso10646-1")
 ;(set-default-font "-outline-Courier New-normal-r-normal-normal-*-*-96-96-c-*-iso8859-1")
 ;;(set-default-font "-outline-Courier New-normal-r-normal-normal-13-97-96-96-c-*-iso8859-1")
@@ -31,15 +30,19 @@
 ;;(set-default-font "fontset-gbk")
 ;;
 
-;; Setting English Font
-(set-face-attribute
-  'default nil :font "Consolas 14")
+(if (string-equal system-type "windows-nt") ; Microsoft Windows
+    ;; Setting English Font
+    (progn
+      (set-face-attribute
+       'default nil :font "Consolas 14")
  
-;; Chinese Font
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-                      charset
-                      (font-spec :family "Microsoft Yahei" :size 16)))
+      ;; Chinese Font
+      (dolist (charset '(kana han symbol cjk-misc bopomofo))
+        (set-fontset-font (frame-parameter nil 'font)
+                          charset
+                          (font-spec :family "Microsoft Yahei" :size 16)))
+      )
+  )
 
 (defun increase-font-size ()
   (interactive)

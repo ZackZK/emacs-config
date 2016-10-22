@@ -132,7 +132,9 @@
 
 
 ;;最大化窗口
-(w32-send-sys-command 61488)
+(if (string-equal system-type "windows-nt") ; Microsoft Windows
+    (progn
+      (w32-send-sys-command 61488)))
 ;; Put the following at the end of .emacs
 ;; (defun w32-restore-frame ()
 ;; "Restore a minimized frame"

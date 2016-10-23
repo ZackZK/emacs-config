@@ -11,7 +11,7 @@
 
 ;;设置默认工作目录
 ;;(setq default-directory "C:/USERS/") 
-(setq default-directory "d:/Project") 
+;;(setq default-directory "d:/Project") 
 
 ;;'y' for 'yes', 'n' for 'no'
 (fset 'yes-or-no-p 'y-or-n-p) 

@@ -37,14 +37,18 @@
 ;; org模式配置
 (require 'my-org-mode)
 
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+;; markdown配置
+(require 'markdown-config)
 
 ;; 加载zenburn主题
 (add-to-list 'custom-theme-load-path "~/my-lisp/3rd-lisp/theme")
 (load-theme 'zenburn t)
 
+;; Ctrl-space在windows下被输入法切换占用，使用Ctrl-l替代
 (global-set-key (kbd "C-l") 'set-mark-command)
+;; 跳到指定行
 (global-set-key (kbd "C-x g") 'goto-line)
+;; 替换字符串
 (global-set-key (kbd "C-o") 'replace-string)
 
 (setq default-buffer-file-coding-system 'utf-8)
@@ -52,7 +56,8 @@
 (setq file-name-coding-system 'chinese-gbk);;设置文件名编码
 (setq path-name-coding-system 'chinese-gbk);;设置目录路径名编码
 
-(require 'markdown-config)
+;; org mode
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))

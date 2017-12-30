@@ -65,6 +65,13 @@
       '(lambda ()
         (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
+(require 'go-mode)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+(add-hook 'go-mode
+      '(lambda ()
+        (electric-pair-mode)))
+
+
 (server-start)
 
 
